@@ -2,3 +2,8 @@
 .content {
     margin-top: 10%;
 }
+/* jquerypartials */
+/* create-partial */
+.create-partial {
+    display: none;
+}
