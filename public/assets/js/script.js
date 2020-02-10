@@ -12,7 +12,7 @@ createAccount.on("click", function(event) {
 
 continueBtn.on("submit", function(event) {
     event.preventDefault();
-    createPartial.html(usernamePartial.html());
+    signUpDiv.html(usernamePartial.html());
 })
 
 // end sign up for account
