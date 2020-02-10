@@ -3,7 +3,10 @@
     margin-top: 10%;
 }
 /* jquerypartials */
-/* create-partial */
 .create-partial {
+    display: none;
+}
+
+.username-partial {
     display: none;
 }

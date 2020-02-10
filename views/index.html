@@ -18,12 +18,18 @@
             <div class="sign-up uk-margin">
                 <h4>log in</h4>
                 <form class="uk-margin">
-                    <input class="uk-input uk-form-width-medium" type="text" placeholder="email">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input class="uk-input" type="text" placeholder="email">
+                    </div>
                     <br><br>
-                    <input class="uk-input uk-form-width-medium" type="text" placeholder="password">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                        <input class="uk-input" type="text" placeholder="password">
+                    </div>
                 </form>
-                <button class="login uk-button uk-button-default">let's go</button>
-                <p>new? <a class="create-account" href="">create an account</a></p>
+                <button type="submit" class="login uk-button uk-button-default">let's go</button>
+                <p>new? <a class="create-account" href="#">create an account</a></p>
             </div>
         </div>
     
@@ -34,7 +40,24 @@
                 <p>create a password</p>
                 <input class="uk-input uk-form-width-medium" type="text" placeholder="password">
             </form>
-            <button class="continue uk-button uk-button-default">continue</button>
+            <button type="submit" class="continue-one uk-button uk-button-default">continue</button>
+        </div>
+
+        <div class="username-partial uk-text-center uk-margin">
+            <h4>select a username from the list below</h4>
+            <div class="uk-form-controls">
+                <label><input class="uk-radio" type="radio" name="radio1"> Option 01</label>
+                <br>
+                <label><input class="uk-radio" type="radio" name="radio1"> Option 02</label>
+                <br>
+                <label><input class="uk-radio" type="radio" name="radio1"> Option 02</label>
+                <br>
+                <label><input class="uk-radio" type="radio" name="radio1"> Option 02</label>
+                <br>
+                <label><input class="uk-radio" type="radio" name="radio1"> Option 02</label>
+                <br><br>
+            </div>
+            <button class="continue-two uk-button uk-button-default">continue</button>
         </div>
 
     <script src="../public/assets/js/script.js"></script>
