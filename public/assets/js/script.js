@@ -4,6 +4,8 @@ const createAccount = $(".create-account");
 const createPartial = $(".create-partial");
 const continueBtn = $(".continue-one");
 const usernamePartial = $(".username-partial");
+const continue2Btn = $(".continue-two");
+const strengthsPartial = $(".strengths-partial");
 
 createAccount.on("click", function(event) {
     event.preventDefault();
@@ -16,6 +18,12 @@ continueBtn.on("click", function(event) {
     createPartial.hide();
     usernamePartial.show();
 });
+
+continue2Btn.on("click", function(event) {
+    event.preventDefault();
+    usernamePartial.hide();
+    strengthsPartial.show();
+})
 // end sign up for account
 
 // sendbird
