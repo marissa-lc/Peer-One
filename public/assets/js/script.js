@@ -10,11 +10,10 @@ createAccount.on("click", function(event) {
     signUpDiv.html(createPartial.html());
 });
 
-continueBtn.on("submit", function(event) {
+continueBtn.submit(function(event) {
     event.preventDefault();
     signUpDiv.html(usernamePartial.html());
-})
-
+});
 // end sign up for account
 
 // sendbird
@@ -56,3 +55,4 @@ openChannel.sendUserMessage(MESSAGE, DATA, CUSTOM_TYPE, function(message, error)
         return;
     }
 });
+// end sendbird
