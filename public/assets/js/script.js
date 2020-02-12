@@ -7,12 +7,14 @@ const usernamePartial = $(".username-partial");
 
 createAccount.on("click", function(event) {
     event.preventDefault();
-    signUpDiv.html(createPartial.html());
+    signUpDiv.hide();
+    createPartial.show();
 });
 
-continueBtn.submit(function(event) {
+continueBtn.on("click", function(event) {
     event.preventDefault();
-    signUpDiv.html(usernamePartial.html());
+    createPartial.hide();
+    usernamePartial.show();
 });
 // end sign up for account
 
