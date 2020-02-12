@@ -1,0 +1,12 @@
+/* index.html */
+.content {
+    margin-top: 10%;
+}
+/* jquerypartials */
+.create-partial {
+    display: none;
+}
+
+.username-partial {
+    display: none;
+}
