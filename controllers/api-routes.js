@@ -1,23 +1,48 @@
-// Dependencies
-// =============================================================
-const skill = require("../models/skill");
 var express = require("express");
-var path = require("path");
 
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = 8080;
+var router = express.Router();
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// Import the model (cat.js) to use its database functions.
+var skill = require("../models/skill.js");
 
-
-app.get("/api/skills", function (req, res) {
-    skill.findAll(function (result) {
-        return res.json(result);
-    })
+// Create all our routes and set up logic within those routes where required.
+router.get("/", function(req, res) {
+  cat.all(function(data) {
+    var hbsObject = {
+      cats: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
 });
 
-module.exports = app;
+router.post("/api/cats", function(req, res) {
+  cat.create(["name", "sleepy"], [req.body.name, req.body.sleepy], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
+
+router.put("/api/cats/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  cat.update(
+    {
+      sleepy: req.body.sleepy
+    },
+    condition,
+    function(result) {
+      if (result.changedRows === 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+        return res.status(404).end();
+      }
+      res.status(200).end();
+
+    }
+  );
+});
+
+// Export routes for server.js to use.
+module.exports = router;
