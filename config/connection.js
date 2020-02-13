@@ -1,18 +1,20 @@
 const mysql = require("mysql2");
 
-const conn = mysql.createConnection({
+const connection = mysql.createConnection({
     host: "localhost",
-    user: "luke",
-    password: "bootcamp",
+    user: "root",
+    password: "Password123",
     database: "peer_up_db"
 });
 
-conn.connect(function(err) {
+// Make connection.
+connection.connect(function(err) {
     if (err) {
-        console.error("Error connecting");
-        return;
+      console.error("error connecting: " + err.stack);
+      return;
     }
-    console.log("Connected to database.");
-});
-
-module.exports = conn;
+    console.log("connected as id " + connection.threadId);
+  });
+  
+  // Export connection for our ORM to use.
+  module.exports = connection;
