@@ -6,31 +6,22 @@ var router = express.Router();
 var skill = require("../models/skill.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  cat.all(function(data) {
-    var hbsObject = {
-      cats: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+router.get("api/skills", function(req, res) {
+  
 });
 
-router.post("/api/cats", function(req, res) {
-  cat.create(["name", "sleepy"], [req.body.name, req.body.sleepy], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
+router.post("/api/skills", function(req, res) {
+  
 });
 
-router.put("/api/cats/:id", function(req, res) {
+router.put("/api/skills/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  cat.update(
+  skill.update(
     {
-      sleepy: req.body.sleepy
+      subject: req.body
     },
     condition,
     function(result) {
