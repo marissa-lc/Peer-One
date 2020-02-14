@@ -2,11 +2,13 @@ var express = require("express");
 
 var router = express.Router();
 
-const db = require("../models/skill.js");
+
+const skill = require("../models/skill.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/api/skills", function (req, res) {
-  db.findAll(function (result) {
+  skill.findAll(function (result) {
+
     res.json(result);
   });
 });

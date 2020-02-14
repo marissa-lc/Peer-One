@@ -1,22 +1,12 @@
-/* index.html */
+body, html {
+    background-color: #B5FFEB;
+}
+
 .content {
-    margin-top: 10%;
-};
-/* jquerypartials */
-.create-partial {
-    display: none;
-};
+    text-align: center;
+}
 
-.username-partial {
-    display: none;
-};
-
-.strengths-partial {
-    display: none;
-};
-
-.lets-do-this {
-    background-color: #F7F7F7;
-};
-/* display feed */
-
+.uk-card {
+    display: inline-block;
+    width: 30%;
+}
