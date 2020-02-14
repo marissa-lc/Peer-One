@@ -1,6 +1,11 @@
-module.exports = function(sequelize, DataTypes) {
- const Post = sequelize.define("Post", {
-   message: DataTypes.STRING,
- });
- return Post;
+const orm = require("../config/orm");
+
+const post = {
+  findAll: function (cb) {
+    orm.selectAll("posts", function (result) {
+      cb(result);
+    });
+  }
 };
+
+module.exports = post;
