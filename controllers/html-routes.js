@@ -4,7 +4,13 @@ var router = express.Router();
 
 var skill = require("../models/skill.js");
 
+var path = require("path");
+
 // Create all our routes and set up logic within those routes where required.
+router.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
 router.get("api/skills", function (req, res) {
   skill.findAll(function (result) {
     res.json(res);

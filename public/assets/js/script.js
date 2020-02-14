@@ -1,4 +1,5 @@
 // index.html - sign up for account
+const letsGo = $(".lets-go");
 const signUpDiv = $(".sign-up");
 const createAccount = $(".create-account");
 const createPartial = $(".create-partial");
