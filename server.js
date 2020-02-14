@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-const express = require("express");
-
-const app = express();
-app.use(express.static('views'));
-
-app.get('/', function(req, res) {
-    res.send('index.html')
-})
-
-app.listen(3000);
-=======
 // const app = require("./controllers/api-routes");
 // const express = require("express");
 
@@ -31,4 +19,3 @@ app.use(routes);
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
   });
->>>>>>> 7b85cddf77645ace84db6cb8efbb1fca769a966f
