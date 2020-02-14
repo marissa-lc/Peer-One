@@ -1,6 +1,11 @@
-module.exports = function(sequelize, DataTypes) {
- const Skill = sequelize.define("Skill", {
-   subject: DataTypes.STRING,
- });
- return Skill;
+const orm = require("../config/orm");
+
+const skill = {
+  findAll: function (cb) {
+    orm.selectAll("skills", function (result) {
+      cb(result);
+    });
+  }
 };
+
+module.exports = skill;
