@@ -102,9 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
-<<<<<<< HEAD
 
+# package-lock.json file
 package-lock.json
-chat
-=======
->>>>>>> 1cfe5ee8bce7e7128c19dbf80ab7152ddee16143
+
+# Project folders that don't need to be included for now
+lib/
+models_sqlz/
