@@ -2,6 +2,7 @@ const orm = require("../config/orm");
 
 const post = {
   findAll: function (cb) {
+    const fields = [ "username", "subject", "body" ];
     const params = [
       "posts",
       "users",
@@ -11,7 +12,7 @@ const post = {
       "skills.ID",
       "skill_id"
     ];
-    orm.joinThree(params, function (result) {
+    orm.joinThree(fields, params, function (result) {
       cb(result);
     });
   }
