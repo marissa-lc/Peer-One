@@ -1,9 +1,9 @@
-const conn = require("./connection.js");
+const connection = require("./connection.js");
 
 const orm = {
     selectAll: function (table, cb) {
         const command = "SELECT * FROM ??";
-        conn.query(command, { table }, function(err, result) {
+        connection.query(command, { table }, function(err, result) {
             if (err) {
                 console.error(err);
                 return;
