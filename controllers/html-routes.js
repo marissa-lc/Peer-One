@@ -2,15 +2,15 @@ var express = require("express");
 
 var router = express.Router();
 
-const skill = require("../models/skill.js");
+var skill = require("../models/skill.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/api/skills", function (req, res) {
+router.get("api/skills", function (req, res) {
   skill.findAll(function (result) {
-    res.json(result);
+    res.json(res);
   });
 });
-/*
+
 router.post("/api/skills", function (req, res) {
 
 });
@@ -35,6 +35,6 @@ router.put("/api/skills/:id", function (req, res) {
     }
   );
 });
-*/
+
 // Export routes for server.js to use.
 module.exports = router;

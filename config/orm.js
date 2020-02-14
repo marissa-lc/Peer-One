@@ -1,16 +1,16 @@
-const conn = require("./connection.js");
+const connection = require("./connection.js");
 
 const orm = {
-    selectAll: async function(table) {
+    selectAll: function (table, cb) {
         const command = "SELECT * FROM ??";
-        let result;
-        try {
-            result = await conn.query(command, { table });
-            return result;
-        } catch (err) {
-            console.error("Error trying to SELECT");
-            return;
-        }
+        connection.query(command, [ table ], function(err, result) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            // Pass the query result to the specified callback function
+            cb(result);
+        });
     }
 };
 
