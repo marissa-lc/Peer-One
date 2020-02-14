@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peɘr up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" />
+    <link rel="stylesheet" href="../public/assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <div class="uk-background-muted uk-padding uk-panel">
+            <header class="uk-h4" style="text-align: center; font-size: xx-large;">peɘr up</header>
+        </div>
+    </div>
+
+    <section class="feed-buttons">
+        <p class="uk-margin uk-text-center">
+            <button class="uk-button uk-button-default uk-button-large">new help request</button>
+            <button class="uk-button uk-button-default uk-button-large">add to my strengths</button>
+        </p>
+    </section>
+    <section class="feed">
+        <div class="post-area">
+            <div class="post uk-card-body">
+                {{#each posts}}
+                {{> posts/post-block}}
+                {{/each}}
+            </div>
+        </div>
+
+    </section>
+
+    <script src="../public/assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.4/dist/js/uikit-icons.min.js"></script>
+</body>
+
+</html>
