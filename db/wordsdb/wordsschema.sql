@@ -1,6 +1,4 @@
-drop database if exists words_db;
-create database words_db;
-use words_db;
+use peer_up_db;
 
 create table descriptors (
     ID int not null AUTO_INCREMENT,

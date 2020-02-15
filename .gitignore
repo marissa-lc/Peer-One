@@ -110,5 +110,4 @@ connection.js
 =======
 
 # My personal mysql db connection settings
-config/my_connection.js
->>>>>>> 1abfdccc5769554965d2100a75afe71e10b78bb1
+
