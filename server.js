@@ -1,14 +1,21 @@
 const express = require("express");
 const PORT = process.env.PORT || 8080;
+const path = require("path");
 
 const app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 const apiRoutes = require("./controllers/api-routes");
 app.use(apiRoutes);
