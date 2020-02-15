@@ -1,7 +1,5 @@
-var express = require("express");
-
-var router = express.Router();
-
+const express = require("express");
+const router = express.Router();
 
 const skill = require("../models/skill.js");
 const post = require("../models/post.js");
@@ -9,7 +7,6 @@ const post = require("../models/post.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/api/skills", function (req, res) {
   skill.findAll(function (result) {
-
     res.json(result);
   });
 });
