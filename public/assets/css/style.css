@@ -1,12 +1,14 @@
-body, html {
-    background-color: #B5FFEB;
+
+html {
+  background: linear-gradient(rgba(0, 85, 133, 0.45), rgba(208, 83, 232, 0.45)) no-repeat center center fixed,
+    url("../css/img/webb.png");  
 }
 
 .content {
-    text-align: center;
+  text-align: center;
 }
 
 .uk-card {
-    display: inline-block;
-    width: 30%;
+  display: inline-block;
+  width: 30%;
 }

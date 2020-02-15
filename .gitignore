@@ -106,4 +106,9 @@ dist
 # package-lock
 package-lock.json
 
+
+
 config/connection.js
+# My personal mysql db connection settings
+config/my_connection.js
+
