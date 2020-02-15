@@ -1,4 +1,4 @@
-use words_db;
+use peer_up_db;
 
 insert into animals (animal_name)
 values 
