@@ -34,16 +34,14 @@ strengths.on("click", function (event) {
 // end sign up for account
 
 // feed
-$.get("/api/posts", function (data) {
-    if (data.length !== 0) {
-        for (var i = 0; i < data.length; i++) {
-            var row = $("<div>");
-            row.addClass("post");
-            row.append("<p>" + data[i].body + "</p>");
-            $(".post-area").prepend(row);
-        }
-    }
-});
+// $.get("/api/posts", function (data) {
+//         for (var i = 0; i < data.length; i++) {
+//             var row = $("<div>");
+//             row.addClass("post");
+//             row.append("<p>" + data[i].body + "</p>");
+//             $(".post-area").prepend(row);
+//         }
+// });
 
 // end feed
 
