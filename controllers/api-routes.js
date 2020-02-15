@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const skill = require("../models/skill.js");
-const post = require("../models/post.js");
+const { post, skill } = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/api/skills", function (req, res) {
