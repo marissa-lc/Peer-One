@@ -1,5 +1,11 @@
-var express = require("express");
+const express = require("express");
+const router = express.Router();
 
+<<<<<<< HEAD
+router.get("/", function (req, res) {
+  res.type("text/html");
+  res.send("index.html");
+=======
 var router = express.Router();
 
 var skill = require("../models/skill.js");
@@ -40,7 +46,7 @@ router.put("/api/skills/:id", function (req, res) {
 
     }
   );
+>>>>>>> 4473c4b964fcfad232f86268ffe4e9dab13782e8
 });
 
-// Export routes for server.js to use.
 module.exports = router;

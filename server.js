@@ -1,6 +1,3 @@
-// const app = require("./controllers/api-routes");
-// const express = require("express");
-
 const express = require("express");
 const PORT = process.env.PORT || 8080;
 
@@ -13,8 +10,10 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const routes = require("./controllers/api-routes");
-app.use(routes);
+const apiRoutes = require("./controllers/api-routes");
+app.use(apiRoutes);
+const htmlRoutes = require("./controllers/html-routes");
+app.use(htmlRoutes);
 
 app.listen(PORT, function() {
     console.log("App now listening at localhost:" + PORT);
