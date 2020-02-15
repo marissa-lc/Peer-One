@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 const path = require("path");
-const post = require("../models/post");
+
+const post = require("../models/post.js");
+
 
 router.get("/", function (req, res) {
   res.type("text/html");
@@ -11,9 +13,11 @@ router.get("/", function (req, res) {
 
 
 router.get("/feed", function (req, res) {
-  // res.sendFile(path.join(__dirname + "/../public/displayfeed.html"));
-  post.findAll(function (results) {
-    res.render("feed", {posts: results});
+
+  post.findAll(function (result) {
+    let posts = result;
+    res.render('feed',{posts});
+
   });
 });
 
