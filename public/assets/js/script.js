@@ -5,6 +5,7 @@ const createAccount = $(".create-account");
 const createPartial = $(".create-partial");
 const continueBtn = $(".continue-one");
 const usernamePartial = $(".username-partial");
+const checkedUsername = $('input[type="radio"]:checked').val();
 const continue2Btn = $(".continue-two");
 const strengthsPartial = $(".strengths-partial");
 const strengths = $(".strength");
@@ -34,6 +35,7 @@ continue2Btn.on("click", function (event) {
     event.preventDefault();
     usernamePartial.hide();
     strengthsPartial.show();
+    console.log(checkedUsername)
 });
 
 strengths.on("click", function (event) {
@@ -42,7 +44,14 @@ strengths.on("click", function (event) {
 });
 
 newPost.on("click", function (event) {
-    $.post
+    event.preventDefault();
+
+    var newPost = {
+        body: $(".new-body").val().trim()
+    };
+
+    console.log(newPost);
+
 })
 
 // end sign up for account

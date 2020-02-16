@@ -16,6 +16,7 @@ router.get("/api/posts", function (req, res) {
   });
 });
 
+
 /*
 router.post("/api/skills", function (req, res) {
 
