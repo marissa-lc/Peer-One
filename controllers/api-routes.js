@@ -1,17 +1,22 @@
 const express = require("express");
 const router = express.Router();
 
-const { post, skill } = require("../models");
+const db = require("../models");
 
-// Create all our routes and set up logic within those routes where required.
 router.get("/api/skills", function (req, res) {
-  skill.findAll(function (result) {
+  db.skill.findAll(function (result) {
+    res.json(result);
+  });
+});
+
+router.get("/api/answers/:postId", function (req, res) {
+  db.answer.findForPost(req.params.postId, function (result) {
     res.json(result);
   });
 });
 
 router.get("/api/posts", function (req, res) {
-  post.findAll(function (result) {
+  db.post.findAll(function (result) {
     res.json(result);
   });
 });
