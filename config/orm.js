@@ -13,7 +13,7 @@ const orm = {
         });
     },
     joinThree: function (fields, params, cb) {
-        const command = "select " + selectify(fields) +
+        const command = "select " + fieldsToList(fields) +
             "from ?? " +
             "inner join ?? on ?? = ?? " +
             "inner join ?? on ?? = ??";
@@ -31,7 +31,7 @@ const orm = {
 
 module.exports = orm;
 
-function selectify(fieldArray) {
+function fieldsToList(fieldArray) {
     if (fieldArray.length === 0) {
         throw("fieldArray must contain at least one element");
     }   
