@@ -1,11 +1,11 @@
 <div class="post uk-card uk-card-default uk-card-body uk-margin" style="width: 75%">
-    {{body}}
-
-    <br>
-    <br>
+    {{username}} posted the following question:
+    <h5 style="padding-top: 10px">{{body}}</h5>
     {{!-- <button type="button" class="answer btn btn-danger" data-id="{{id}}">
         post answer</button> --}}
 
+    <button class="uk-button uk-button-default" data-id="{{id}}" disabled>chat</button>
+    
     <a class="answer uk-button uk-button-default" href="#modal-sections" uk-toggle data-id="{{id}}">post answer</a>
 
     <div id="modal-sections" uk-modal>
