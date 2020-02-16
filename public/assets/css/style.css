@@ -5,7 +5,16 @@ html {
 }
 
 .content {
-  text-align: center;
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.uk-grid-match {
+    margin-bottom: 20%;
+}
+
+.post-area {
+    margin-bottom: 20%;
 }
 
 .uk-card {
