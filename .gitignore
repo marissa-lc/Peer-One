@@ -106,5 +106,8 @@ dist
 # package-lock
 package-lock.json
 
-# My personal mysql db connection settings
-config/my_connection.js
+# DB login settings
+config/connection.js
+
+# lib folder for chat client
+lib

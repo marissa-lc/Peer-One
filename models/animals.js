@@ -1,14 +1,14 @@
 const Query = require("../config/query");
 
-const skill = {
+const animal = {
   findAll: function (cb) {
     const query = new Query();
-    query.select("subject")
-      .from("skills")
+    query.select("animal_name")
+      .from("animals")
       .go(result => {
         cb(result);
       });
   }
 };
 
-module.exports = skill;
+module.exports = animal;
