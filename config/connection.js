@@ -3,11 +3,9 @@ const mysql = require("mysql");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-<<<<<<< HEAD
+
     password: "Password123",
-=======
-    password: "password",
->>>>>>> e0be9a137bfe8314b6c2f48990ab0c46c0e4d7e1
+
     database: "peer_up_db"
 });
 
