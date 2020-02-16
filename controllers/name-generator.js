@@ -15,7 +15,7 @@ module.exports = {
         setTimeout(() => {
             console.log(names);
             return names;
-        }, 2000);
+        }, 1000);
         
         function generateName(promise1, promise2) {
             Promise.all([promise1, promise2]).then(function (values) {
