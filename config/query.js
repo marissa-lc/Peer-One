@@ -28,7 +28,7 @@ class Query {
    },
    fromData: {
     text: "",
-    table: ""
+    table: {}
    },
    joinDataArray: [],
    whereData: {
@@ -51,53 +51,71 @@ class Query {
  insert(table, fields, values) {
   this.command.insertData.text = "INSERT INTO ?? ";
   this.command.insertData.table = table;
-  if (typeof (fields) === "object" && fields.length > 0) {
+  if (Array.isArray(fields)) {
    this.command.insertData.text += " (" + this.stringArrayToList(fields, "??") + ")\n";
    this.command.insertData.fields = fields;
   }
-  else if (typeof (fields) !== "object" && typeof(fields) !== "undefined") {
+  else {
    this.command.insertData.text += " (??)\n";
-   this.command.insertData.fields = [ fields ];
+   this.command.insertData.fields = [fields];
   }
-  if (typeof (values) === "object" && values.length > 0) {
+  if (Array.isArray(values)) {
    this.command.insertData.text += "VALUES (" + this.stringArrayToList(values, "?") + ")\n";
    this.command.insertData.values = values;
   }
-  else if (typeof (values) !== "object" && typeof(values) !== "undefined") {
+  else {
    this.command.insertData.text += "VALUES (?)\n";
-   this.command.insertData.values = [ values ];
+   this.command.insertData.values = [values];
   }
 
   return this;
  }
 
  select(fields) {
-  if (typeof(fields) === "object" && fields.length > 0) {
+  if (Array.isArray(fields)) {
    this.command.selectData.text = "SELECT " + this.stringArrayToList(fields, "??") + "\n";
    this.command.selectData.fields = fields;
   }
-  else if (typeof(fields) !== "object" && typeof(fields) !== "undefined") {
+  else {
    this.command.selectData.text = "SELECT ??\n";
-   this.command.selectData.fields = [ fields ];
+   this.command.selectData.fields = [fields];
   }
 
   return this;
  }
 
  from(tableName) {
-  this.command.fromData.text = "FROM ??\n";
-  this.command.fromData.table = tableName;
+  if (typeof tableName === "object" && Object.keys(tableName).length === 2) {
+   this.command.fromData.text = "FROM ?? AS ??\n";
+   this.command.fromData.table = tableName[Object.keys(tableName)[0]];
+   this.command.fromData.alias = tableName[Object.keys(tableName)[1]];
+  } else {
+   this.command.fromData.text = "FROM ??\n";
+   this.command.fromData.table = tableName;
+   this.command.fromData.alias = "";
+  }
 
   return this;
  }
 
  innerJoin(table, leftKey, rightKey) {
-  this.command.joinDataArray.push({
-   text: "INNER JOIN ?? ON ?? = ??\n",
-   table: table,
-   leftKey: leftKey,
-   rightKey: rightKey
-  });
+  if (typeof table === "object" && Object.keys(table).length === 2) {
+   this.command.joinDataArray.push({
+    text: "INNER JOIN ?? AS ?? ON ?? = ??\n",
+    table: table[Object.keys(table)[0]],
+    alias: table[Object.keys(table)[1]],
+    leftKey: leftKey,
+    rightKey: rightKey
+   });
+  } else {
+   this.command.joinDataArray.push({
+    text: "INNER JOIN ?? ON ?? = ??\n",
+    table: table,
+    alias: "",
+    leftKey: leftKey,
+    rightKey: rightKey
+   });
+  }
 
   return this;
  }
@@ -128,10 +146,11 @@ class Query {
   (this.command.insertData.values.length > 0) ? queryParams.push(...this.command.insertData.values) : null;
   (this.command.selectData.fields.length > 0) ? queryParams.push(...this.command.selectData.fields) : null;
   (this.command.fromData.table !== "") ? queryParams.push(this.command.fromData.table) : null;
+  (this.command.fromData.alias !== "") ? queryParams.push(this.command.fromData.alias) : null;
   this.command.joinDataArray.forEach(joinDataItem => {
-   queryParams.push(
-    joinDataItem.table,
-    joinDataItem.leftKey,
+   queryParams.push(joinDataItem.table);
+   (joinDataItem.alias !== "") ? queryParams.push(joinDataItem.alias) : null;
+   queryParams.push(joinDataItem.leftKey,
     joinDataItem.rightKey
    );
   });
