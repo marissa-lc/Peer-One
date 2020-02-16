@@ -1,10 +1,13 @@
-const orm = require("../config/orm");
+const Query = require("../config/query");
 
 const word = {
   findAll: function (cb) {
-    orm.selectAll("descriptors", function (result) {
-      cb(result);
-    });
+    const query = new Query();
+    query.select("word")
+      .from("descriptors")
+      .go(result => {
+        cb(result);
+      });
   }
 };
 

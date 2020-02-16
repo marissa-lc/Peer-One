@@ -1,10 +1,13 @@
-const orm = require("../config/orm");
+const Query = require("../config/query");
 
 const skill = {
   findAll: function (cb) {
-    orm.selectAll("skills", function (result) {
-      cb(result);
-    });
+    const query = new Query();
+    query.select("subject")
+      .from("skills")
+      .go(result => {
+        cb(result);
+      });
   }
 };
 

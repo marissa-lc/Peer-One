@@ -1,7 +1,5 @@
-const skill = require("../models/skill.js");
-const post = require("../models/post.js");
-
 module.exports = {
-    skill: skill,
-    post: post
+    skill: require("../models/skill"),
+    post: require("../models/post"),
+    user: require("./user")
 };

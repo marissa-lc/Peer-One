@@ -1,10 +1,13 @@
-const orm = require("../config/orm");
+const Query = require("../config/query");
 
 const animal = {
   findAll: function (cb) {
-    orm.selectAll("animals", function (result) {
-      cb(result);
-    });
+    const query = new Query();
+    query.select("animal_name")
+      .from("animals")
+      .go(result => {
+        cb(result);
+      });
   }
 };
 
