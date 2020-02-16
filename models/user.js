@@ -1,8 +1,13 @@
-const orm = require("./orm");
+const Query = require("../config/query");
 
 const user = {
-    findAll: function(cb) {
-        orm.selectAll("users", function(result))
+    findAll: function (cb) {
+        const query = new Query();
+        query.select(["username", "email"])
+        .from("users")
+        .go(result => {
+            cb(result);
+        });
     }
 };
 
