@@ -8,6 +8,10 @@ const usernamePartial = $(".username-partial");
 const continue2Btn = $(".continue-two");
 const strengthsPartial = $(".strengths-partial");
 const strengths = $(".strength");
+const newPost = $(".new-post");
+
+// const {getNames} = require("../../../controllers/name-generator");
+// const names = getNames();
 
 createAccount.on("click", function (event) {
     event.preventDefault();
@@ -15,10 +19,15 @@ createAccount.on("click", function (event) {
     createPartial.show();
 });
 
+const usernames = [$(".username1"), $(".username2"), $(".username3"), $(".username4"), $(".username5")];
+
 continueBtn.on("click", function (event) {
     event.preventDefault();
     createPartial.hide();
     usernamePartial.show();
+    // for (i=0; i<usernames.length; i++) {
+    //     usernames[i].append(names[i]);
+    // }
 });
 
 continue2Btn.on("click", function (event) {
@@ -31,17 +40,11 @@ strengths.on("click", function (event) {
     event.preventDefault();
     $(this).attr("style", "background-color: #F2F2F2;");
 });
+
+newPost.on("click", function (event) {
+    $.post
+})
+
 // end sign up for account
 
-// feed
-// $.get("/api/posts", function (data) {
-//         for (var i = 0; i < data.length; i++) {
-//             var row = $("<div>");
-//             row.addClass("post");
-//             row.append("<p>" + data[i].body + "</p>");
-//             $(".post-area").prepend(row);
-//         }
-// });
-
-// end feed
 
