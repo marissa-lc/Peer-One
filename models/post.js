@@ -1,4 +1,3 @@
-// const orm = require("../config/orm");
 const Query = require("../config/query");
 
 const post = {
