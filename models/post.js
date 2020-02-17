@@ -17,6 +17,18 @@ const post = {
       .go(result => {
         cb(result);
       });
+  },
+  add: function (userId, skillId, body, cb) {
+    query = new Query();
+    query
+      .insert(
+        "posts",
+        ["user_id", "skill_id", "body"],
+        [userId, skillId, body]
+      )
+      .go(result => {
+        cb(result);
+      });
   }
 };
 
