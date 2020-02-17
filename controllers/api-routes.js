@@ -21,11 +21,17 @@ router.get("/api/posts", function (req, res) {
   });
 });
 
-/*
-router.post("/api/skills", function (req, res) {
-
+router.post("/api/posts", function (req, res) {
+  db.post.add(
+    req.body.userId,
+    req.body.skillId,
+    req.body.body,
+    function () {
+      res.status(200);
+    });
 });
 
+/*
 router.put("/api/skills/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
@@ -47,5 +53,6 @@ router.put("/api/skills/:id", function (req, res) {
   );
 });
 */
+
 // Export routes for server.js to use.
 module.exports = router;
