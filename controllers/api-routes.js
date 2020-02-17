@@ -21,6 +21,24 @@ router.get("/api/posts", function (req, res) {
   });
 });
 
+router.post("/api/login", passport.authenticate("local"), function(req, res) {
+  res.json(req.user);
+});
+
+
+router.post("/api/signup", function(req, res) {
+  db.user.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
+  })
+    .then(function() {
+      res.redirect(307, "/api/login");
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    });
+});
 
 router.post("/api/posts", function (req, res) {
   db.post.add(
