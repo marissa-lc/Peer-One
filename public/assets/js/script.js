@@ -50,25 +50,35 @@ newPost.on("click", function (event) {
     event.preventDefault();
 
     var newPost = {
+        // userID: ,
+        // skillID: ,
         body: $(".post-body").val().trim()
     };
 
     console.log(newPost.body);
 
-    $.post("/api/posts", newPost)
+    // $.post("/api/posts", newPost)
 
-    .then(function() {
+    // .then(function() {
 
-        var row = $("<div>");
-        row.addClass("post uk-card uk-card-default uk-card-body uk-margin");
-        // row.append("<p>" + newPost.username + " posted the following request: </p>");
-        row.append("<h5>" + newPost.body + "</h5>");
-        row.append(chatBtn);
-        row.append(answerBtn);
-        row.append(answerModal);
+    //     var row = $("<div>");
+    //     row.addClass("post uk-card uk-card-default uk-card-body uk-margin");
+    //     // row.append("<p>" + newPost.username + " posted the following request: </p>");
+    //     row.append("<h5>" + newPost.body + "</h5>");
+    //     row.append(chatBtn);
+    //     row.append(answerBtn);
+    //     row.append(answerModal);
   
-        $(".post-area").prepend(row);
+    //     $(".post-area").prepend(row);
   
+    //   });
+
+    $.ajax("/api/posts", {
+        type: "POST",
+        data: newPost
+      }).then(function() {
+        // Reload the page to get the updated list
+        location.reload();
       });
 
 })
