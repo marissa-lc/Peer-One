@@ -128,6 +128,14 @@ class Query {
   return this;
  }
 
+ whereNull(field) {
+  this.command.whereData.text = "WHERE ?? IS NULL\n";
+  this.command.whereData.field = field;
+  this.command.whereData.value = "";
+
+  return this;
+ }
+
  go(cb) {
   let commandText = this.command.insertData.text
    + this.command.selectData.text
@@ -154,11 +162,8 @@ class Query {
     joinDataItem.rightKey
    );
   });
-  ((this.command.whereData.field !== "") && (this.command.whereData.value !== ""))
-   ? queryParams.push(
-    this.command.whereData.field,
-    this.command.whereData.value
-   ) : null;
+  (this.command.whereData.field !== "") ? queryParams.push(this.command.whereData.field) : null;
+  (this.command.whereData.value !== "") ? queryParams.push(this.command.whereData.value) : null;
   this.command.whereAdditionalDataArray.forEach(whereDataItem => {
    queryParams.push(
     whereDataItem.field,
