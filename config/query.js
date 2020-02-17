@@ -1,4 +1,4 @@
-const connection = require("../config/connection");
+const connection = require("./connection");
 
 class Query {
  constructor() {
@@ -125,6 +125,16 @@ class Query {
   this.command.whereData.field = field;
   this.command.whereData.value = value;
 
+  return this;
+ }
+
+ andWhereEqual(field, value) {
+  this.command.whereAdditionalDataArray.push({
+   text: "AND ?? = ?\n",
+   field: field,
+   value: value
+  });
+  
   return this;
  }
 
