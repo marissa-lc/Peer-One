@@ -10,6 +10,9 @@ const continue2Btn = $(".continue-two");
 const strengthsPartial = $(".strengths-partial");
 const strengths = $(".strength");
 const newPost = $(".new-post");
+var chatBtn = $(".chat");
+var answerBtn = $(".answer");
+var answerModal = $("#modal-sections")
 
 // const {getNames} = require("../../../controllers/name-generator");
 // const names = getNames();
@@ -47,10 +50,26 @@ newPost.on("click", function (event) {
     event.preventDefault();
 
     var newPost = {
-        body: $(".new-body").val().trim()
+        body: $(".post-body").val().trim()
     };
 
-    console.log(newPost);
+    console.log(newPost.body);
+
+    $.post("/api/posts", newPost)
+
+    .then(function() {
+
+        var row = $("<div>");
+        row.addClass("post uk-card uk-card-default uk-card-body uk-margin");
+        // row.append("<p>" + newPost.username + " posted the following request: </p>");
+        row.append("<h5>" + newPost.body + "</h5>");
+        row.append(chatBtn);
+        row.append(answerBtn);
+        row.append(answerModal);
+  
+        $(".post-area").prepend(row);
+  
+      });
 
 })
 
