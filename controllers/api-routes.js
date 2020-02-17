@@ -3,6 +3,33 @@ const router = express.Router();
 
 const db = require("../models");
 
+// Users API routes
+
+// Get all users
+router.get("/api/users", function(req, res) {
+  db.user.findAll(function(result) {
+    res.json(result);
+  });
+});
+
+// Find users by username
+router.get("/api/users/username/:username", function(req, res) {
+  db.user.findByUsername(req.params.username, function(result) {
+    res.json(result);
+  });
+});
+
+// Find a user by ID
+router.get("/api/users/id/:userId", function(req, res) {
+  db.user.findById(req.params.userId, function(result) {
+    res.json(result);
+  });
+});
+
+// Give a user a skill
+
+// Skill API routes
+
 router.get("/api/skills", function (req, res) {
   db.skill.findAll(function (result) {
     res.json(result);
@@ -26,7 +53,8 @@ router.post("/api/posts", function (req, res) {
     req.body.userId,
     req.body.skillId,
     req.body.body,
-    function () {
+    function (result) {
+      console.log(result);
       res.status(200);
     });
 });
