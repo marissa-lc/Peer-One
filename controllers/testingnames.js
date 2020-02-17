@@ -1,4 +1,16 @@
-const {getNames} = require("./name-generator");
+const { getNames } = require("./name-generator");
 
 
-getNames();
+
+
+
+
+
+const names = getNames();
+
+setTimeout(() => {
+    console.log(names);
+}, 3000);
+
+
+

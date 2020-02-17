@@ -21,6 +21,7 @@ router.get("/api/posts", function (req, res) {
   });
 });
 
+
 router.post("/api/posts", function (req, res) {
   db.post.add(
     req.body.userId,
@@ -29,6 +30,7 @@ router.post("/api/posts", function (req, res) {
     function () {
       res.status(200);
     });
+
 });
 
 /*

@@ -1,11 +1,24 @@
-
 html {
   background: linear-gradient(rgba(0, 85, 133, 0.45), rgba(208, 83, 232, 0.45)) no-repeat center center fixed,
     url("../css/img/webb.png");  
 }
 
 .content {
-  text-align: center;
+    margin-bottom: 20%;
+    text-align: center;
+}
+
+.peer-up:hover {
+  margin: 0 0 0 0;
+  text-decoration: none;
+}
+
+.uk-grid-match {
+    margin-bottom: 20%;
+}
+
+.post-area {
+    margin-bottom: 20%;
 }
 
 .uk-card {
