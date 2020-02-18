@@ -13,12 +13,14 @@
 
 <body>
     <div class="uk-padding uk-panel">
-        <a class="peer-up" href="/feed"><header class="uk-h4" style="text-align: center; font-size: xx-large;">peɘr up</header></a>
+        <a class="peer-up" href="/feed">
+            <header class="uk-h4" style="text-align: center; font-size: xx-large;">peɘr up</header>
+        </a>
     </div>
-    
+
     <div class="uk-grid-match uk-child-width-expand@s uk-text-center uk-padding" uk-grid>
         <div>
-            <div class="content uk-card uk-card-default uk-card-body uk-margin uk-text-center" >
+            <div class="content uk-card uk-card-default uk-card-body uk-margin uk-text-center">
                 <h3 class="uk-card-title" style="text-align: center">i am looking for help with...</h3>
                 <button class="uk-button uk-button-default" type="button">skills</button>
                 <div uk-dropdown>
@@ -48,11 +50,16 @@
                     </ul>
                 </div>
                 <br><br>
-                <textarea class="uk-textarea" placeholder="tell us a bit more about your issue (optional)"></textarea>
+                <form>
+                    <textarea class="login-post-body uk-textarea"
+                        placeholder="tell us a bit more about your issue (optional)"></textarea>
+                </form>
                 <br><br>
-                <a class="uk-button uk-button-default" href="/feed" style="background-color: #F7F7F7">help me</a>    
+                <a class="login-post uk-button uk-button-default" href="/feed" style="background-color: #F7F7F7">help
+                    me</a>
             </div>
         </div>
+
         <div>
             <div class="strengths-partial uk-card uk-card-default uk-card-body uk-text-center uk-margin">
                 <h3>what are your strengths?</h3>
@@ -71,11 +78,8 @@
                 <button class="strength uk-button uk-button-default">nosql</button>
                 <br><br>
                 <a class="uk-button uk-button-default" href="/feed" style="background-color: #F7F7F7">let's go</a>
-        
             </div>
-            
         </div>
-        
     </div>
 
     <script src="./assets/js/script.js"></script>
