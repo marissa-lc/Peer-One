@@ -11,7 +11,7 @@ const strengthsPartial = $(".strengths-partial");
 const strengths = $(".strength");
 const post = $(".login-post");
 const newPost = $(".new-post");
-const answer = $(".save");
+const saveResponse = $(".save");
 
 // const {getNames} = require("../../../controllers/name-generator");
 // const names = getNames();
@@ -86,19 +86,20 @@ newPost.on("click", function (event) {
 
 });
 
-// answer.on("click", function(event) {
-//     var addAnswer = {
-//         // replyToId: 1,
-//         body: $(".answer-body").val().trim()
+// saveResponse.on("click", function(event) {
+//     var addResponse = {
+//         userId: 1,
+//         replyToId: 1,
+//         body: $(".response-body").val().trim()
 //     };
 
-//     console.log (addAnswer.body);
+//     console.log (addResponse.body);
 
 //     $.ajax("/api/posts", {
 //         type: "POST",
-//         data: addAnswer
+//         data: addResponse
 //       }).then(function() {
 //         // Reload the page to get the updated list
 //         window.location.replace("http://localhost:8080/feed");
 //       });
-// })
+// });
