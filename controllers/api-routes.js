@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Wordpos = require("wordpos");
 
 const db = require("../models");
 
@@ -20,7 +21,7 @@ router.get("/api/posts", function (req, res) {
     res.json(result);
   });
 });
-
+/*
 router.post("/api/login", passport.authenticate("local"), function(req, res) {
   res.json(req.user);
 });
@@ -39,7 +40,7 @@ router.post("/api/signup", function(req, res) {
       res.status(401).json(err);
     });
 });
-
+*/
 router.post("/api/posts", function (req, res) {
   db.post.add(
     req.body.userId,
@@ -74,5 +75,16 @@ router.put("/api/skills/:id", function (req, res) {
 });
 */
 
+router.get("/api/namegen", function (req, res) {
+  const wordpos = new Wordpos();
+  wordpos.randAdjective(function (adj) {
+    wordpos.randNoun(function (noun) {
+      const username = adj[0].toUpperCase() + adj.slice(1) +
+        noun[0].toUpperCase() + noun.slice(1) +
+        (Math.floor(Math.random() * 100)).toString();
+        res.send(username);
+    })
+  })
+})
 // Export routes for server.js to use.
 module.exports = router;
