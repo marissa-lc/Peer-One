@@ -26,4 +26,26 @@ A peer to peer tutoring app where users can post requests for help with coding-r
 - Posts are displayed in cards with anonymous username and post body as well as a chat button and a post answer button
 - Logout icon
 
+## User Experience
+
+![Login](https://i.imgur.com/XdR5KJd.jpg)
+
+![Email Password](https://i.imgur.com/VxWud3V.jpg)
+
+![Username](https://i.imgur.com/rAQdnqh.jpg)
+
+![Strengths](https://i.imgur.com/QWyaii2.jpg)
+
+![Skills Page](https://i.imgur.com/nhZWuSv.jpg)
+
+![Feed](https://i.imgur.com/HUraqRA.jpg)
+
+![Help Request](https://i.imgur.com/RCHyPOE.jpg)
+
+![Add Strengths](https://i.imgur.com/tRmXsCF.jpg)
+
+![Post Answer](https://i.imgur.com/q6plAU1.jpg)
+
+
+
 
