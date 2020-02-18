@@ -9,10 +9,9 @@ const checkedUsername = $('input[type="radio"]:checked').val();
 const continue2Btn = $(".continue-two");
 const strengthsPartial = $(".strengths-partial");
 const strengths = $(".strength");
+const post = $(".login-post");
 const newPost = $(".new-post");
-var chatBtn = $(".chat");
-var answerBtn = $(".answer");
-var answerModal = $("#modal-sections")
+const answer = $(".save");
 
 // const {getNames} = require("../../../controllers/name-generator");
 // const names = getNames();
@@ -46,43 +45,60 @@ strengths.on("click", function (event) {
     $(this).attr("style", "background-color: #F2F2F2;");
 });
 
-newPost.on("click", function (event) {
-    event.preventDefault();
+// end sign up for account
 
-    var newPost = {
-        // userID: ,
-        // skillID: ,
-        body: $(".post-body").val().trim()
-    };
+post.on("click", function(event) {
+    var addPost = {
+        userId: 1,
+        skillId: 1,
+        body: $(".login-post-body").val().trim()
+    }
 
-    console.log(newPost.body);
-
-    // $.post("/api/posts", newPost)
-
-    // .then(function() {
-
-    //     var row = $("<div>");
-    //     row.addClass("post uk-card uk-card-default uk-card-body uk-margin");
-    //     // row.append("<p>" + newPost.username + " posted the following request: </p>");
-    //     row.append("<h5>" + newPost.body + "</h5>");
-    //     row.append(chatBtn);
-    //     row.append(answerBtn);
-    //     row.append(answerModal);
-  
-    //     $(".post-area").prepend(row);
-  
-    //   });
+    console.log(addPost.body);
 
     $.ajax("/api/posts", {
         type: "POST",
-        data: newPost
+        data: addPost
       }).then(function() {
         // Reload the page to get the updated list
         location.reload();
       });
+    
+});
 
-})
+newPost.on("click", function (event) {
 
-// end sign up for account
+    var addPost = {
+        userId: 1,
+        skillId: 1,
+        body: $(".post-body").val().trim()
+    };
 
+    console.log (addPost.body);
 
+    $.ajax("/api/posts", {
+        type: "POST",
+        data: addPost
+      }).then(function() {
+        // Reload the page to get the updated list
+        window.location.replace("http://localhost:8080/feed");
+      });
+
+});
+
+// answer.on("click", function(event) {
+//     var addAnswer = {
+//         // replyToId: 1,
+//         body: $(".answer-body").val().trim()
+//     };
+
+//     console.log (addAnswer.body);
+
+//     $.ajax("/api/posts", {
+//         type: "POST",
+//         data: addAnswer
+//       }).then(function() {
+//         // Reload the page to get the updated list
+//         window.location.replace("http://localhost:8080/feed");
+//       });
+// })
