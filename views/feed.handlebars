@@ -1,87 +1,91 @@
-   <div>
-        <div class="uk-padding uk-panel">
-            <a class="peer-up" href="/feed"><header class="uk-h4" style="text-align: center; font-size: xx-large;">peɘr up</header></a>
+<div>
+    <div class="uk-padding uk-panel">
+        <a class="peer-up" href="/feed">
+            <header class="uk-h4" style="text-align: center; font-size: xx-large;">peɘr up</header>
+        </a>
+    </div>
+</div>
+
+<section class="feed-buttons">
+    <p class="uk-margin uk-text-center">
+        <button class="uk-button uk-button-default uk-button-large" type="button" uk-toggle="target: .new-request"
+            style="background: white">new help request</button>
+        <button class="uk-button uk-button-default uk-button-large" type="button" uk-toggle="target: .add-strengths"
+            style="background: white">add to my strengths</button>
+    </p>
+
+    <div class="new-request" id="modal-close-outside" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <div class="content uk-margin uk-text-center" style="margin-top: 10%">
+                <h3 class="uk-card-title" style="text-align: center">i am looking for help with...</h3>
+                <button class="uk-button uk-button-default" type="button">skills</button>
+                <div uk-dropdown>
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="#">html</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">css</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">git</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">javascript</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">api's</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">node.js</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">express</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">mysql</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">react</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">nosql</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">jquery</a></li>
+                        <li class="uk-nav-divider"></li>
+                    </ul>
+                </div>
+                <br><br>
+                <form>
+                    <textarea class="post-body uk-textarea"
+                        placeholder="tell us a bit more about your issue (optional)"></textarea>
+                </form>
+                <br><br>
+                <a class="new-post uk-button uk-button-default" href="/feed" style="background-color: #F7F7F7">help me</a>
+            </div>
         </div>
     </div>
 
-    <section class="feed-buttons">
-        <p class="uk-margin uk-text-center">
-            <button class="uk-button uk-button-default uk-button-large" type="button" uk-toggle="target: .new-request"
-                style="background: white">new help request</button>
-            <button class="uk-button uk-button-default uk-button-large" type="button" uk-toggle="target: .add-strengths"
-                style="background: white">add to my strengths</button>
-        </p>
-
-        <div class="new-request" id="modal-close-outside" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body">
-                <div class="content uk-margin uk-text-center" style="margin-top: 10%">
-                    <h3 class="uk-card-title" style="text-align: center">i am looking for help with...</h3>
-                    <button class="uk-button uk-button-default" type="button">skills</button>
-                    <div uk-dropdown>
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="#">html</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">css</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">git</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">javascript</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">api's</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">node.js</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">express</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">mysql</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">react</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">nosql</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">jquery</a></li>
-                            <li class="uk-nav-divider"></li>
-                        </ul>
-                    </div>
-                    <br><br>
-                    <textarea class="post-body uk-textarea"
-                            placeholder="tell us a bit more about your issue (optional)"></textarea>
-                    <br><br>
-                    <a class="new-post uk-button uk-button-default" style="background-color: #F7F7F7">help me</a>
-                </div>
+    <div class="add-strengths" id="modal-close-outside" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <div class="strengths-partial uk-text-center uk-margin">
+                <h3>what strengths would you like to add?</h3>
+                <button class="strength uk-button uk-button-default">html</button>
+                <button class="strength uk-button uk-button-default">css</button>
+                <button class="strength uk-button uk-button-default">js</button>
+                <button class="strength uk-button uk-button-default">jquery</button>
+                <br>
+                <button class="strength uk-button uk-button-default">api's</button>
+                <button class="strength uk-button uk-button-default">git</button>
+                <button class="strength uk-button uk-button-default">node.js</button>
+                <button class="strength uk-button uk-button-default">express</button>
+                <br>
+                <button class="strength uk-button uk-button-default">mysql</button>
+                <button class="strength uk-button uk-button-default">react</button>
+                <button class="strength uk-button uk-button-default">nosql</button>
+                <br><br>
+                <a class="uk-button uk-button-default" href="/feed" style="background-color: #F7F7F7">done</a>
             </div>
         </div>
+    </div>
 
-        <div class="add-strengths" id="modal-close-outside" uk-modal>
-            <div class="uk-modal-dialog uk-modal-body">
-                <div class="strengths-partial uk-text-center uk-margin">
-                    <h3>what strengths would you like to add?</h3>
-                    <button class="strength uk-button uk-button-default">html</button>
-                    <button class="strength uk-button uk-button-default">css</button>
-                    <button class="strength uk-button uk-button-default">js</button>
-                    <button class="strength uk-button uk-button-default">jquery</button>
-                    <br>
-                    <button class="strength uk-button uk-button-default">api's</button>
-                    <button class="strength uk-button uk-button-default">git</button>
-                    <button class="strength uk-button uk-button-default">node.js</button>
-                    <button class="strength uk-button uk-button-default">express</button>
-                    <br>
-                    <button class="strength uk-button uk-button-default">mysql</button>
-                    <button class="strength uk-button uk-button-default">react</button>
-                    <button class="strength uk-button uk-button-default">nosql</button>
-                    <br><br>
-                    <a class="uk-button uk-button-default" style="background-color: #F7F7F7">done</a>
-                </div>
-            </div>
-        </div>
+</section>
 
-    </section>
+<section class="feed">
+    <div class="post-area uk-text-center">
+        {{#each posts}}
+        {{> posts/post-block}}
+        {{/each}}
+    </div>
 
-    <section class="feed">
-        <div class="post-area uk-text-center">
-                {{#each posts}}
-                {{> posts/post-block}}
-                {{/each}}
-        </div>
-
-    </section>
+</section>
