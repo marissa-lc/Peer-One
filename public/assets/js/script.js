@@ -9,6 +9,7 @@ const checkedUsername = $('input[type="radio"]:checked').val();
 const continue2Btn = $(".continue-two");
 const strengthsPartial = $(".strengths-partial");
 const strengths = $(".strength");
+const skillSelection = $(".skill")
 const post = $(".login-post");
 const newPost = $(".new-post");
 const saveResponse = $(".save");
@@ -41,6 +42,11 @@ continue2Btn.on("click", function (event) {
 });
 
 strengths.on("click", function (event) {
+    event.preventDefault();
+    $(this).attr("style", "background-color: #F2F2F2;");
+});
+
+skillSelection.on("click", function (event) {
     event.preventDefault();
     $(this).attr("style", "background-color: #F2F2F2;");
 });
