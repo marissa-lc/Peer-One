@@ -20,15 +20,15 @@ const saveResponse = $(".save");
 createAccount.on("click", function (event) {
     event.preventDefault();
     signUpDiv.hide();
-    createPartial.show();
+    usernamePartial.show();
 });
 
 const usernames = [$(".username1"), $(".username2"), $(".username3"), $(".username4"), $(".username5")];
 
 continueBtn.on("click", function (event) {
     event.preventDefault();
-    createPartial.hide();
-    usernamePartial.show();
+    usernamePartial.hide();
+    strengthsPartial.show();
     // for (i=0; i<usernames.length; i++) {
     //     usernames[i].append(names[i]);
     // }
@@ -36,8 +36,8 @@ continueBtn.on("click", function (event) {
 
 continue2Btn.on("click", function (event) {
     event.preventDefault();
-    usernamePartial.hide();
-    strengthsPartial.show();
+    strengthsPartial.hide();
+    createPartial.show();
     console.log(checkedUsername)
 });
 
