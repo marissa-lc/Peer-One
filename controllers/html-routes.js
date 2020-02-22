@@ -25,5 +25,6 @@ router.get("/skills", function (req, res) {
   res.sendFile(path.join(__dirname + "/../public/skills.html"));
 });
 
+
 module.exports = router;
 
