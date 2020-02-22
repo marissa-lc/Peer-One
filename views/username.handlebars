@@ -3,20 +3,14 @@
         <a class="peer-up" href="/">
             <h1 class="logo">peɘr up</h1>
         </a>
-        
+
         <div class="username-partial uk-text-center uk-margin">
             <h4>select a username from the list below</h4>
             <div class="uk-form-controls">
                 <form id="username-form">
-                    <label><input class="username1 uk-radio" type="radio" name="radio1">SaltyDuck56</label>
-                    <br>
-                    <label><input class="username2 uk-radio" type="radio" name="radio1">NighPlight77</label>
-                    <br>
-                    <label><input class="username3 uk-radio" type="radio" name="radio1">RotundExcavation41</label>
-                    <br>
-                    <label><input class="username4 uk-radio" type="radio" name="radio1">OcellatedCrevasse90</label>
-                    <br>
-                    <label><input class="username5 uk-radio" type="radio" name="radio1">MossyVarietypack29</label>
+                    {{#each names}}
+                    {{ name }}
+                    {{/each}}
                 </form>
                 <br>
             </div>
