@@ -21,7 +21,7 @@ module.exports = function (app) {
   app.get("/login", function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/feed");
+      res.redirect("/skills");
     }
     res.redirect("/");
   });
@@ -41,4 +41,6 @@ module.exports = function (app) {
   app.get("/skills", isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, "/../public/skills1.html"));
   });
+
+  
 };
