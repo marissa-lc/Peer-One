@@ -5,8 +5,11 @@ const skill = {
     const query = new Query();
     query.select("subject")
       .from("skills")
-      .go(result => {
-        cb(result);
+      .go(function(err, result) {
+        if (err) {
+          return cb(err);
+        }
+        cb(null, result);
       });
   }
 };
