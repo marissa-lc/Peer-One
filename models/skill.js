@@ -3,7 +3,7 @@ const Query = require("../config/query");
 const skill = {
   findAll: function (cb) {
     const query = new Query();
-    query.select("subject")
+    query.select(["ID", "subject"])
       .from("skills")
       .go(function(err, result) {
         if (err) {
