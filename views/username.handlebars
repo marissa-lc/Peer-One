@@ -1,0 +1,21 @@
+<div class="content uk-margin uk-text-center" style="margin-top: 10%">
+    <div class="uk-card uk-card-default uk-card-body">
+        <a class="peer-up" href="/">
+            <h1 class="logo">peɘr up</h1>
+        </a>
+
+        <div class="username-partial uk-text-center uk-margin">
+            <h4>select a username from the list below</h4>
+            <div class="uk-form-controls">
+                <form id="username-form">
+                    {{#each names}}
+                    {{ name }}
+                    {{/each}}
+                </form>
+                <br>
+            </div>
+            <a class="continue-one uk-button uk-button-default" href="/strengths">continue</a>
+            {{!-- <button class="continue-one uk-button uk-button-default">continue</button> --}}
+        </div>
+    </div>
+</div>

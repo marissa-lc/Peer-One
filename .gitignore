@@ -109,5 +109,5 @@ package-lock.json
 # DB login settings
 config/connection.js
 
-# lib folder for chat client
-lib
+# require.js
+require.js

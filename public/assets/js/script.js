@@ -1,4 +1,3 @@
-// index.html - sign up for account
 const letsGo = $(".lets-go");
 const signUpDiv = $(".sign-up");
 const createAccount = $(".create-account");
@@ -13,10 +12,9 @@ const skillSelection = $(".skill")
 const post = $(".login-post");
 const newPost = $(".new-post");
 const saveResponse = $(".save");
+const logout = $(".logout-icon");
 
-// const {getNames} = require("../../../controllers/name-generator");
-// const names = getNames();
-
+// index.html - sign up for account
 createAccount.on("click", function (event) {
     event.preventDefault();
     signUpDiv.hide();
@@ -32,13 +30,14 @@ continueBtn.on("click", function (event) {
     // for (i=0; i<usernames.length; i++) {
     //     usernames[i].append(names[i]);
     // }
+    console.log(names);
 });
 
 continue2Btn.on("click", function (event) {
     event.preventDefault();
     strengthsPartial.hide();
     createPartial.show();
-    console.log(checkedUsername)
+    console.log(checkedUsername);
 });
 
 strengths.on("click", function (event) {
@@ -109,3 +108,9 @@ newPost.on("click", function (event) {
 //         window.location.replace("http://localhost:8080/feed");
 //       });
 // });
+
+// logout.on("click", function (event) {
+//     $.ajax("/api/logout", {
+//         type: "GET"
+//       });
+// })

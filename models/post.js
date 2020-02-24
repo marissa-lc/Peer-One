@@ -14,8 +14,11 @@ const post = {
       .innerJoin("users", "users.ID", "user_id")
       .innerJoin("skills", "skills.ID", "skill_id")
       .whereNull("reply_to_id")
-      .go(result => {
-        cb(result);
+      .go(function(err, result) {
+        if (err) {
+          return cb(err);
+        }
+        cb(null, result);
       });
   },
   add: function (userId, skillId, body, cb) {
@@ -26,8 +29,11 @@ const post = {
         ["user_id", "skill_id", "body"],
         [userId, skillId, body]
       )
-      .go(result => {
-        cb(result);
+      .go(function(err, result) {
+        if (err) {
+          return cb(err);
+        }
+        cb(null, result);
       });
   }
 };

@@ -44,6 +44,10 @@ class Query {
    orderByData: {
     text: "",
     fields: []
+   },
+   limitData: {
+    text: "",
+    count: 0
    }
   };
  }
@@ -136,6 +140,13 @@ class Query {
   return this;
  }
 
+ limit(count) {
+  this.command.limitData.text = "LIMIT " + count.toString() + "\n";
+  this.command.limitData.count = count;
+
+  return this;
+ }
+
  go(cb) {
   let commandText = this.command.insertData.text
    + this.command.selectData.text
@@ -147,6 +158,7 @@ class Query {
   this.command.whereAdditionalDataArray.forEach(whereDataItem => {
    commandText += whereDataItem.text;
   });
+  commandText += this.command.limitData.text;
 
   const queryParams = [];
   (this.command.insertData.table !== "") ? queryParams.push(this.command.insertData.table) : null;
@@ -170,14 +182,14 @@ class Query {
     whereDataItem.value
    );
   });
+  (this.command.limitData.count > 0) ? queryParams.push(this.command.limitData.count) : null;
 
   const query = connection.query(commandText, queryParams, (err, result) => {
-   console.log(query.sql);
+   // console.log(query.sql);
    if (err) {
-    console.log(err.message);
-    return;
+    return cb(err);
    }
-   cb(result);
+   cb(null, result);
   });
  }
 
