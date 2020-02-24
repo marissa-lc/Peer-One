@@ -10,6 +10,10 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
+    res.render("index");
+  });
+
+  app.get("/signup", function (req, res) {
     res.render("signup");
   });
 
@@ -32,11 +36,11 @@ module.exports = function (app) {
   });
 
   app.get("/skills", isAuthenticated, function (req, res) {
-    skill.findAll(function(err, response) {
+    skill.findAll(function (err, response) {
       if (err) {
         return res.status(401);
       }
-      res.render("skills", {skills: response});
+      res.render("skills", { skills: response });
     });
   });
 };
