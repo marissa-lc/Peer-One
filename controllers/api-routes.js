@@ -7,7 +7,6 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    console.log(JSON.stringify(req.user));
     res.json(req.user);
   });
 
@@ -19,7 +18,7 @@ module.exports = function (app) {
       password: req.body.password
     }, function (err) {
       if (err) {
-        return res.json(err);
+        return res.send(err);
       }
       res.redirect("/login");
     });
@@ -72,7 +71,6 @@ module.exports = function (app) {
     },
       function (err) {
         if (err) {
-          console.log(err);
           return res.status(401).send(err);
         }
         res.status(200).send(req.body);

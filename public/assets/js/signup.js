@@ -38,12 +38,13 @@ $(document).ready(function () {
                 };
 
                 // Make the AJAX POST request
-                $.ajax("localhost:8080/api/users", {
+                $.ajax("http://localhost:8080/api/signup", {
                     method: "POST",
                     data: newUser
                 })
                     .then(function (response) {
                         console.log(response);
+                        window.location.replace("login");
                     })
                     .catch(function () {
                         alert("Server error. Couldn't create user.");
@@ -58,7 +59,7 @@ $(document).ready(function () {
 });
 
 function getRandomUsername(callback) {
-    $.get("localhost:8080/api/namegen")
+    $.get("http://localhost:8080/api/namegen")
         .then(function (response) {
             callback(response);
         });
