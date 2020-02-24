@@ -9,8 +9,8 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
 
-  app.get("/", function (req, res) {
-    res.render("signup");
+  app.get('/', function (req, res) {
+    res.render("index");
   });
 
   app.get("/login", function (req, res) {
@@ -38,5 +38,29 @@ module.exports = function (app) {
       }
       res.render("skills", {skills: response});
     });
+  });
+
+  app.get("/username", function (err, req, res, next) {
+    // Check for headers already sent and if so, 
+    // go to next function with err ( i.e. you next statement );
+    if (res.headersSent) {
+        return next(err);
+    }
+    res.status(500); // next line is 500 error ( headers sent );
+    // if not error continue on... 
+    // First you have to get your names - so declare a var and
+    // call your names function.
+    let names = getNames();
+    // Then once you have your names render you handlebars template and send
+    // them to handlebars - ( i.e. res.render('handlBarsTemplate', itemTemplateNeeds ))
+    res.render ("username", names );
+  });
+
+  app.get("/strengths", function (req, res) {
+    res.render("strengths");
+  });
+
+  app.get("/signup", function (req, res) {
+    res.render("signup");
   });
 };

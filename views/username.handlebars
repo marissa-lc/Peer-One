@@ -8,9 +8,11 @@
             <h4>select a username from the list below</h4>
             <div class="uk-form-controls">
                 <form id="username-form">
-                    {{#each names}}
-                    {{ name }}
-                    {{/each}}
+                    <label><input class="uk-radio" type="radio" name="radio1">
+                        {{#each names}}
+                        {{ name }}
+                        {{/each}}
+                    </label>
                 </form>
                 <br>
             </div>
