@@ -7,19 +7,18 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    console.log(JSON.stringify(req.user));
     res.json(req.user);
   });
 
   // Sign up a new user
-  app.post("/api/signup", function (req, res) {
+    app.post("/api/signup", function (req, res) {
     db.user.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password
     }, function (err) {
       if (err) {
-        return res.json(err);
+        return res.send(err);
       }
       res.redirect("/login");
     });
@@ -63,6 +62,21 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/answers/:id", function ({ body }, res) {
+    db.post.add({
+      userId: req.body.userId,
+      skillId: null,
+      body: req.body.body,
+      replyToId: req.body.replyToId
+    },
+      function (err) {
+        if (err) {
+          return res.status(401).send(err);
+        }
+        res.status(200).send(req.body);
+      });
+  });
+
   app.get("/api/posts", function (req, res) {
     db.post.findAll(function (err, result) {
       if (err) {
@@ -73,10 +87,11 @@ module.exports = function (app) {
   });
 
   app.post("/api/posts", function (req, res) {
-    db.post.add(
-      req.body.userId,
-      req.body.skillId,
-      req.body.body,
+    db.post.add({
+      userId: req.body.userId,
+      skillId: req.body.skillId,
+      body: req.body.body
+    },
       function (err) {
         if (err) {
           console.log(err);

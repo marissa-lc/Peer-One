@@ -2,7 +2,7 @@ var WordPOS = require('wordpos'),
     wordpos = new WordPOS();
 
 module.exports = {
-    getNames: () => {
+    getNames: function () {
 
         const names = [];
 

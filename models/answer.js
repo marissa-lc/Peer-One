@@ -19,12 +19,12 @@ const answer = {
       .innerJoin("posts", "posts.ID", "replies.reply_to_id")
       .innerJoin("users", "users.ID", "replies.user_id")
       .whereEqual("posts.ID", postId)
-      .go(function (err, result) {
+      .go(function(err, result) {
         if (err) {
           return cb(err);
         }
         cb(null, result);
-      });
+  });
   }
 };
 
