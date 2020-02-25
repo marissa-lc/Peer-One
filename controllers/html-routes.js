@@ -13,6 +13,7 @@ module.exports = function (app) {
     res.render("index");
   });
 
+
   app.get("/username", function (req, res) {
     res.render("username");
   });
@@ -20,6 +21,7 @@ module.exports = function (app) {
   app.get("/strengths", function (req, res) {
     res.render("strengths");
   });
+
 
   app.get("/signup", function (req, res) {
     res.render("signup");
@@ -44,11 +46,11 @@ module.exports = function (app) {
   });
 
   app.get("/skills", isAuthenticated, function (req, res) {
-    skill.findAll(function(err, response) {
+    skill.findAll(function (err, response) {
       if (err) {
         return res.status(401);
       }
-      res.render("skills", {skills: response});
+      res.render("skills", { skills: response });
     });
   });
 };
