@@ -6,7 +6,7 @@ const skillDropdown = $("#skill-dropdown");
 // Populate dropdown list with skills
 skillDropdown.empty();
 skillDropdown.append($("<option>Choose one...</option>"));
-getSkills(function(skills) {
+getSkills(function (skills) {
   skills.forEach(skill => {
     const newOption = $(`<option value="${skill.id}">${skill.subject}</option>`);
     skillDropdown.append(newOption);
@@ -21,19 +21,18 @@ newPost.on("click", function (event) {
       userId: user.id,
       skillId: $("#skill-dropdown:selected").text(),
       body: $(".new-body").val().trim()
+    };
+
+    console.log(addPost.body);
+
+    $.ajax("/api/posts", {
+      type: "POST",
+      data: addPost
+    }).then(function () {
+      // Reload the page to get the updated list
+      window.location.replace("http://localhost:8080/feed");
     });
-});
-
-console.log(addPost.body);
-
-$.ajax("/api/posts", {
-  type: "POST",
-  data: addPost
-}).then(function () {
-  // Reload the page to get the updated list
-  window.location.replace("http://localhost:8080/feed");
-});
-});
+  });
 
 // saveResponse.on("click", function(event) {
 //     var addResponse = {
