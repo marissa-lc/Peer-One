@@ -2,8 +2,10 @@ const mysql = require("mysql");
 
 const connection = mysql.createConnection({
     host: "localhost",
-    user: "luke",
-    password: "bootcamp",
+
+    user: "root",
+    password: "password",
+
     database: "peer_up_db"
 });
 
