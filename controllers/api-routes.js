@@ -114,10 +114,11 @@ module.exports = function (app) {
     function wordRecurse() {
       wordpos.randAdjective(function (adj) {
         wordpos.randNoun(function (noun) {
-          const username = adj[0].toUpperCase() + adj.slice(1) +
-            noun[0].toUpperCase() + noun.slice(1) +
+          const username = adj.toString().charAt(0).toUpperCase() + adj.toString().slice(1) +
+            noun.toString().charAt(0).toUpperCase() + noun.toString().slice(1) +
             (Math.floor(Math.random() * 100)).toString();
           names.push(username);
+          
 
           if (names.length < 5) {
             return wordRecurse();
