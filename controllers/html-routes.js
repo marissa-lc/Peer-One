@@ -13,11 +13,10 @@ module.exports = function (app) {
     res.render("index");
   });
 
-
   app.get("/username", function (req, res) {
-    const getName = require("./namegen");
-    getName(function(names) {
-      res.render("username", {name: names})
+    const getNames = require("./namegen");
+    getNames(function(names) {
+      res.render("username", {names: names})
       });
   });
 
