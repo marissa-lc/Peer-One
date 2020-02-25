@@ -102,11 +102,9 @@ module.exports = function (app) {
   });
 
   app.get("/api/namegen", function (req, res) {
-
     const getNames = require("./namegen.js");
     getNames(function(names) {
       return res.json(names);
     });
-
   });
 };

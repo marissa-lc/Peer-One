@@ -1,6 +1,5 @@
 const Wordpos = require("wordpos");
 
-
 const getNames = function (callback) {
     const wordpos = new Wordpos();
     const names = [];
@@ -17,7 +16,7 @@ const getNames = function (callback) {
                 const username = adj[0].toUpperCase() + adj.slice(1) +
                     noun[0].toUpperCase() + noun.slice(1) +
                     (Math.floor(Math.random() * 100)).toString();
-                names.push(username);
+                names.push({name: username});
 
                 if (names.length < 5) {
                     return wordRecurse();

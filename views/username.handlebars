@@ -7,11 +7,12 @@
         <div class="username-partial uk-text-center uk-margin">
             <p>your automatically generated user name is:
                 <br>
-                <label><input class="uk-radio" type="radio" name="radio2">
-                    {{#each names}}
+                {{#each names}}
+                <!-- <input class="uk-radio" type="radio" name="username-radio-group"> -->
+                <label>
                     {{ name }}
-                    {{/each}}
-                </label>
+                </label><br>
+                {{/each}}
             </p>
             <button id="username-btn" class="uk-button uk-button-default">get another</button>
             <br><br>
