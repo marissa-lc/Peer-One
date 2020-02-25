@@ -6,7 +6,7 @@ values ('MossyVarietypack29', 'user1@address.com', 'pass'),
     ('DeepenedPlasma3', 'user3@address.com', 'pass');
 
 insert into skills (subject)
-values ('SQL'),('Node.JS'),('CSS'), ('JavaScript');
+values ('HTML'),('CSS'),('JavaScript'),('jQuery'),('APIs'),('Git'),('Node'),('Express'),('MySQL'),('React'),('NoSQL');
 
 insert into posts (body, user_id, skill_id, reply_to_id)
 values ('Need help with SQL', 1, 1, NULL),
