@@ -3,7 +3,7 @@ $(document).ready(function() {
         logIn({
             email: $("#login-email").val().trim(),
             password: $("#login-password").val().trim()
-        }, function(response) {
+        }, function(err, response) {
             console.log(response);
         });
     });
