@@ -5,17 +5,13 @@
         </a>
 
         <div class="username-partial uk-text-center uk-margin">
-            <h4>select a username from the list below</h4>
-            <div class="uk-form-controls">
-                <form id="username-form">
-                    {{#each names}}
-                    {{ name }}
-                    {{/each}}
-                </form>
+            <p>your automatically generated user name is:
                 <br>
-            </div>
+                <strong><span id="username-span"></span></strong>
+            </p>
+            <button id="username-btn" class="uk-button uk-button-default">get another</button>
+            <br><br>
             <a class="continue-one uk-button uk-button-default" href="/strengths">continue</a>
-            {{!-- <button class="continue-one uk-button uk-button-default">continue</button> --}}
         </div>
     </div>
 </div>
