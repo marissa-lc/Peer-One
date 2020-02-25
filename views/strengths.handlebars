@@ -6,8 +6,15 @@
 
         <div class="strengths-partial uk-text-center uk-margin">
             <h4>what are your strengths?</h4>
-            <button class="strength uk-button uk-button-default">html</button>
-            <button class="strength uk-button uk-button-default">css</button>
+            {{#each skills}}
+            <!-- <button class="strength uk-button uk-button-default" data-id="{{id}}">{{subject}}</button> -->
+            <input type="checkbox" id="strength-cb-{{@index}}" data-id="{{id}}">
+            <label for="strength-cb-{{@index}}">
+                {{subject}}
+            </label><br>
+            {{/each}}
+            <!-- 
+                <button class="strength uk-button uk-button-default">css</button>
             <button class="strength uk-button uk-button-default">js</button>
             <br>
             <button class="strength uk-button uk-button-default">jquery</button>
@@ -22,6 +29,7 @@
             <br>
             <button class="strength uk-button uk-button-default">nosql</button>
             <button class="strength uk-button uk-button-default">none, i am weak</button>
+             -->
             <br><br>
             <a class="continue-two uk-button uk-button-default" href="/signup">continue</a>
         </div>
