@@ -20,7 +20,7 @@ post.on("click", function(event) {
     var addPost = {
         userId: 1,
         skillId: 1,
-        body: $(".login-post-body").val().trim()
+        body: $(".login-body").val().trim()
     }
 
     console.log(addPost.body);
@@ -40,7 +40,7 @@ newPost.on("click", function (event) {
     var addPost = {
         userId: 1,
         skillId: 1,
-        body: $(".new-post-body").val().trim()
+        body: $(".new-body").val().trim()
     };
 
     console.log (addPost.body);
