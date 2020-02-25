@@ -156,3 +156,4 @@ const newPost = $(".new-post");
 newPost.on("click", function() {
     addPost(post, callback);
 });
+
