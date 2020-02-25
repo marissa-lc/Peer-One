@@ -1,8 +1,11 @@
 $(document).ready(function() {
-    const letsGoLink = $("#lets-go");
-
-    $(letsGoLink).on("click", function(event) {
-        alert("this is happening before the link is followed.");
+    $("#lets-go").on("click", function(event) {
+        logIn({
+            email: $("#login-email").val().trim(),
+            password: $("#login-password").val().trim()
+        }, function(response) {
+            console.log(response);
+        });
     });
 });
 
