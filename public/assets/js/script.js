@@ -15,30 +15,24 @@ const saveResponse = $(".save");
 const logout = $(".logout-icon");
 
 // index.html - sign up for account
-createAccount.on("click", function (event) {
-    event.preventDefault();
-    signUpDiv.hide();
-    usernamePartial.show();
-});
+// createAccount.on("click", function (event) {
+//     event.preventDefault();
+//     signUpDiv.hide();
+//     usernamePartial.show();
+// });
 
-const usernames = [$(".username1"), $(".username2"), $(".username3"), $(".username4"), $(".username5")];
+// continueBtn.on("click", function (event) {
+//     event.preventDefault();
+//     usernamePartial.hide();
+//     strengthsPartial.show();
+// });
 
-continueBtn.on("click", function (event) {
-    event.preventDefault();
-    usernamePartial.hide();
-    strengthsPartial.show();
-    // for (i=0; i<usernames.length; i++) {
-    //     usernames[i].append(names[i]);
-    // }
-    console.log(names);
-});
-
-continue2Btn.on("click", function (event) {
-    event.preventDefault();
-    strengthsPartial.hide();
-    createPartial.show();
-    console.log(checkedUsername);
-});
+// continue2Btn.on("click", function (event) {
+//     event.preventDefault();
+//     strengthsPartial.hide();
+//     createPartial.show();
+//     console.log(checkedUsername);
+// });
 
 strengths.on("click", function (event) {
     event.preventDefault();
