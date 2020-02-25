@@ -17,7 +17,7 @@ const getNames = function (callback) {
                 const username = adj.toString().charAt(0).toUpperCase() + adj.toString().slice(1) +
             noun.toString().charAt(0).toUpperCase() + noun.toString().slice(1) +
             (Math.floor(Math.random() * 100)).toString();
-          names.push(username);
+          names.push({name: username});
 
                 if (names.length < 5) {
                     return wordRecurse();
