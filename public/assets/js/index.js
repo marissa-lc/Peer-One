@@ -1,13 +1,21 @@
-const checkedUsername = $('input[type="radio"]:checked').val();
-const strengths = $(".strength");
-const skills = $(".skill");
+$(document).ready(function() {
+    const letsGoLink = $("#lets-go");
 
-strengths.on("click", function (event) {
-    event.preventDefault();
-    $(this).attr("style", "background-color: #F2F2F2;");
+    $(letsGoLink).on("click", function(event) {
+        alert("this is happening before the link is followed.");
+    });
 });
 
-skills.on("click", function (event) {
-    event.preventDefault();
-    $(this).attr("style", "background-color: #F2F2F2;");
-});
+// const checkedUsername = $('input[type="radio"]:checked').val();
+// const strengths = $(".strength");
+// const skills = $(".skill");
+
+// strengths.on("click", function (event) {
+//     event.preventDefault();
+//     $(this).attr("style", "background-color: #F2F2F2;");
+// });
+
+// skills.on("click", function (event) {
+//     event.preventDefault();
+//     $(this).attr("style", "background-color: #F2F2F2;");
+// });
