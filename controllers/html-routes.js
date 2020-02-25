@@ -15,8 +15,10 @@ module.exports = function (app) {
 
 
   app.get("/username", function (req, res) {
-    
-    res.render("username");
+    const getName = require("./namegen");
+    getName(function(names) {
+      res.render("username", {name: names})
+      });
   });
 
   app.get("/strengths", function (req, res) {
