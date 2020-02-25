@@ -5,16 +5,16 @@
         </a>
 
         <div class="username-partial uk-text-center uk-margin">
-            <p>your automatically generated user name is:
-                <br>
-                <label><input class="uk-radio" type="radio" name="radio2">
+            <p>pick your username:</p>
+                <div class="uk-text-left" style="margin-left: 10%">
                     {{#each names}}
+                    <label><input class="uk-radio" type="radio" name="radio2">
                     {{ name }}
+                    </label>
+                     <br>
                     {{/each}}
-                </label>
-            </p>
-            <button id="username-btn" class="uk-button uk-button-default">get another</button>
-            <br><br>
+                </div>
+            <br>
             <a class="continue-one uk-button uk-button-default" href="/strengths">continue</a>
         </div>
     </div>
