@@ -131,3 +131,29 @@ function getAnswers(postId, callback) {
             callback(err);
         });
 }
+
+///// End GET and POST Calls /////
+
+// Calling functions as necessary
+
+// Login
+const login = $(".login");
+
+login.on("click", function(){
+    logIn(credentials, callback);
+});
+
+// Signup a new user
+const signUp = $("#signup-btn");
+
+signUp.on("click", function() {
+    signUp(userInfo, callback);
+});
+
+// New post from feed
+const newPost = $(".new-post");
+
+newPost.on("click", function() {
+    addPost(post, callback);
+});
+

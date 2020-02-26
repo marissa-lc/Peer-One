@@ -15,9 +15,9 @@ const getNames = function (callback) {
         wordpos.randAdjective(function (adj) {
             wordpos.randNoun(function (noun) {
                 const username = adj.toString().charAt(0).toUpperCase() + adj.toString().slice(1) +
-            noun.toString().charAt(0).toUpperCase() + noun.toString().slice(1) +
-            (Math.floor(Math.random() * 100)).toString();
-          names.push({name: username});
+                    noun.toString().charAt(0).toUpperCase() + noun.toString().slice(1) +
+                    (Math.floor(Math.random() * 100)).toString();
+                names.push({ name: username });
 
                 if (names.length < 5) {
                     return wordRecurse();
