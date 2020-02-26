@@ -6,23 +6,12 @@
 
         <div class="strengths-partial uk-text-center uk-margin">
             <h4>what are your strengths?</h4>
-            <button class="strength uk-button uk-button-default">html</button>
-            <button class="strength uk-button uk-button-default">css</button>
-            <button class="strength uk-button uk-button-default">js</button>
-            <br>
-            <button class="strength uk-button uk-button-default">jquery</button>
-            <button class="strength uk-button uk-button-default">api's</button>
-            <button class="strength uk-button uk-button-default">git</button>
-            <br>
-            <button class="strength uk-button uk-button-default">node.js</button>
-            <button class="strength uk-button uk-button-default">express</button>
-            <br>
-            <button class="strength uk-button uk-button-default">mysql</button>
-            <button class="strength uk-button uk-button-default">react</button>
-            <br>
-            <button class="strength uk-button uk-button-default">nosql</button>
-            <button class="strength uk-button uk-button-default">none, i am weak</button>
-            <br><br>
+            {{#each skills}}
+            <input type="checkbox" id="strength-cb-{{@index}}" data-id="{{id}}">
+            <label for="strength-cb-{{@index}}">
+                {{subject}}
+            </label><br>
+            {{/each}}
             <a class="continue-two uk-button uk-button-default" href="/signup">continue</a>
         </div>
     </div>

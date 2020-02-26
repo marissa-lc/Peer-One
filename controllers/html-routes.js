@@ -15,13 +15,18 @@ module.exports = function (app) {
 
   app.get("/username", function (req, res) {
     const getNames = require("./namegen");
-    getNames(function(names) {
-      res.render("username", {names: names})
-      });
+    getNames(function (names) {
+      res.render("username", { names: names });
+    });
   });
 
   app.get("/strengths", function (req, res) {
-    res.render("strengths");
+    db.skill.findAll(function (err, response) {
+      if (err) {
+        return res.status(401);
+      }
+      res.render("strengths", { skills: response });
+    });
   });
 
 
@@ -39,7 +44,7 @@ module.exports = function (app) {
 
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/feed", isAuthenticated, function (req, res) {
-    post.findAll(function (err, result) {
+    db.post.findAll(function (err, result) {
       if (err) {
         return res.status(401);
       }
@@ -48,7 +53,7 @@ module.exports = function (app) {
   });
 
   app.get("/skills", isAuthenticated, function (req, res) {
-    skill.findAll(function (err, response) {
+    db.skill.findAll(function (err, response) {
       if (err) {
         return res.status(401);
       }
