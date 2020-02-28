@@ -1,0 +1,82 @@
+00:00 app[web.1]: > peerup@1.0.0 start /app
+23.475306+00:00 app[web.1]: > node server.js
+23.475307+00:00 app[web.1]: 
+23.798235+00:00 app[web.1]: Warning: connect.session() MemoryStore is not
+23.798244+00:00 app[web.1]: designed for a production environment, as it will leak
+23.798245+00:00 app[web.1]: memory, and will not scale past a single process.
+23.876521+00:00 app[web.1]: internal/modules/cjs/loader.js:985
+23.876523+00:00 app[web.1]: throw err;
+23.876523+00:00 app[web.1]: ^
+23.876523+00:00 app[web.1]: 
+23.876524+00:00 app[web.1]: Error: Cannot find module 'wordpos'
+23.876524+00:00 app[web.1]: Require stack:
+23.876525+00:00 app[web.1]: - /app/controllers/api-routes.js
+23.876525+00:00 app[web.1]: - /app/server.js
+23.876526+00:00 app[web.1]: at Function.Module._resolveFilename (internal/modules/cjs/loader.js:982:15)
+23.876527+00:00 app[web.1]: at Function.Module._load (internal/modules/cjs/loader.js:864:27)
+23.876528+00:00 app[web.1]: at Module.require (internal/modules/cjs/loader.js:1044:19)
+23.876529+00:00 app[web.1]: at require (internal/modules/cjs/helpers.js:77:18)
+23.876529+00:00 app[web.1]: at Object.<anonymous> (/app/controllers/api-routes.js:1:17)
+23.876529+00:00 app[web.1]: at Module._compile (internal/modules/cjs/loader.js:1158:30)
+23.876530+00:00 app[web.1]: at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+23.876530+00:00 app[web.1]: at Module.load (internal/modules/cjs/loader.js:1002:32)
+23.876531+00:00 app[web.1]: at Function.Module._load (internal/modules/cjs/loader.js:901:14)
+23.876531+00:00 app[web.1]: at Module.require (internal/modules/cjs/loader.js:1044:19) {
+23.876531+00:00 app[web.1]: code: 'MODULE_NOT_FOUND',
+23.876532+00:00 app[web.1]: requireStack: [ '/app/controllers/api-routes.js', '/app/server.js' ]
+23.876532+00:00 app[web.1]: }
+23.885910+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+23.886259+00:00 app[web.1]: npm ERR! errno 1
+23.888125+00:00 app[web.1]: npm ERR! peerup@1.0.0 start: `node server.js`
+23.888291+00:00 app[web.1]: npm ERR! Exit status 1
+23.888516+00:00 app[web.1]: npm ERR!
+23.888673+00:00 app[web.1]: npm ERR! Failed at the peerup@1.0.0 start script.
+23.888848+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+23.898443+00:00 app[web.1]: 
+23.898591+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+23.898688+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2020-02-28T06_22_23_890Z-debug.log
+23.983533+00:00 heroku[web.1]: State changed from starting to crashed
+23.964027+00:00 heroku[web.1]: Process exited with status 1
+25.054209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=c499495c-993b-4b9a-af57-45cc1f51d2f8 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+25.215108+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=d54f8ed8-2cd2-463c-9f88-f11396b2d74f fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+26.795412+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=bbbdf33e-a2c6-4548-bb76-3f012680ee17 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+26.979645+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=a2428948-a541-461d-9f1b-467028d7e1e1 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+27.325690+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=6d5c8eec-f128-43de-8063-c0b863efa5e2 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+27.513537+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=68c76c32-b3b4-48ae-9250-07cbf913c0a0 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+27.794445+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=7430bc2e-89e0-4deb-ac64-14333c2cc829 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+27.667663+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=96b0cbc3-081e-458f-a26e-403516c0138f fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+27.975936+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=6df5fe27-e7a8-4c15-8eab-44d166f11bb4 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+28.121182+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=f48be1d8-9994-4637-84a4-d8aacc138ffe fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+28.295172+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=01277ba7-77eb-4dba-a339-85a78c5781d6 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+28.439934+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=c1e6138f-29c7-4583-8b8f-b6dd8e3f481d fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+28.601045+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=cc3433b0-b47e-4c8d-9e6c-acec87c6563e fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+29.162355+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=ce47bc3d-8ece-4036-99af-d4d5d6f97680 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+29.349743+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=2a8977b4-4f2d-40f8-a868-fff5c504bdf4 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+29.881859+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=17904bdc-393e-4bcc-b676-cc81a9fba3a1 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+30.061516+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=1a5a9c87-98ac-4a3d-b566-848c70e74f1b fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+34.018915+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=peer-up.herokuapp.com request_id=8ff0cc3d-d1f6-4604-ba64-2707d11ecee7 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+34.201863+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=peer-up.herokuapp.com request_id=92d9c8fd-c92e-44db-9dbc-bf482c06f230 fwd="24.20.52.64" dyno= connect= service= status=503 bytes= protocol=https
+2020-02-28T06:28:19.561304+00:00 heroku[web.1]: State changed from crashed to starting
+2020-02-28T06:28:22.735092+00:00 heroku[web.1]: Starting process with command `npm start`
+2020-02-28T06:28:26.357152+00:00 app[web.1]: 
+2020-02-28T06:28:26.357325+00:00 app[web.1]: > peerup@1.0.0 start /app
+2020-02-28T06:28:26.357326+00:00 app[web.1]: > node server.js
+2020-02-28T06:28:26.357326+00:00 app[web.1]: 
+2020-02-28T06:28:26.895067+00:00 app[web.1]: Warning: connect.session() MemoryStore is not
+2020-02-28T06:28:26.895112+00:00 app[web.1]: designed for a production environment, as it will leak
+2020-02-28T06:28:26.895112+00:00 app[web.1]: memory, and will not scale past a single process.
+2020-02-28T06:28:26.963001+00:00 app[web.1]: internal/modules/cjs/loader.js:985
+2020-02-28T06:28:26.963003+00:00 app[web.1]: throw err;
+2020-02-28T06:28:26.963003+00:00 app[web.1]: ^
+2020-02-28T06:28:26.963004+00:00 app[web.1]: 
+2020-02-28T06:28:26.963005+00:00 app[web.1]: Error: Cannot find module 'wordpos'
+2020-02-28T06:28:26.963005+00:00 app[web.1]: Require stack:
+2020-02-28T06:28:26.963005+00:00 app[web.1]: - /app/controllers/api-routes.js
+2020-02-28T06:28:26.963006+00:00 app[web.1]: - /app/server.js
+2020-02-28T06:28:26.963007+00:00 app[web.1]: at Function.Module._resolveFilename (internal/modules/cjs/loader.js:982:15)
+2020-02-28T06:28:26.963007+00:00 app[web.1]: at Function.Module._load (internal/modules/cjs/loader.js:864:27)
+2020-02-28T06:28:26.963008+00:00 app[web.1]: at Module.require (internal/modules/cjs/loader.js:1044:19)
+2020-02-28T06:28:26.963008+00:00 app[web.1]: at require (internal/modules/cjs/helpers.js:77:18)
+2020-02-28T06:28:26.963009+00:00 app[web.1]: at Object.<anonymous> (/app/controllers/api-routes.js:1:17)
+2020-02-28T06:28:26.963009+00:00 app[web.1]: at Module._compile (internal/modules/cjs/loader.js:1158:30)
+2020-02-28T06:28:26.963012+00:00 app[web.1]: at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
