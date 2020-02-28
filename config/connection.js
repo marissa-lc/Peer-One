@@ -1,20 +1,24 @@
 const mysql = require("mysql");
 
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "luke",
-    password: "bootcamp",
-    database: "peer_up_db"
+var connection;
+
+if (process.env.JAWSDB_URL) {
+ connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+ connection = mysql.createConnection(
+  {
+   host: "localhost",
+   user: 'luke',
+   password: 'bootcamp',
+   database: 'peer_up_db'
+  }
+ );
+}
+
+connection.connect(err => {
+ if (err) throw err;
+
+ console.log("Connection established. Thread ID " + connection.threadId);
 });
 
-// Make connection.
-connection.connect(function(err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-    console.log("connected as id " + connection.threadId);
-  });
-  
-  // Export connection for our ORM to use.
-  module.exports = connection;
+module.exports = connection;

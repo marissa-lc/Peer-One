@@ -109,3 +109,5 @@ package-lock.json
 # DB login settings
 config/connection.js
 
+node_modules/
+.env
