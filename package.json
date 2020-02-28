@@ -23,10 +23,10 @@
     "express-session": "^1.17.0",
     "mysql": "^2.18.1",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "wordpos": "^2.0.0"
   },
   "devDependencies": {
-    "wordnet-db": "^3.1.14",
-    "wordpos": "^2.0.0"
+    "wordnet-db": "^3.1.14"
   }
 }
