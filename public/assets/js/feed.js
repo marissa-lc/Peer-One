@@ -1,17 +1,16 @@
 const newPost = $(".new-post");
 const saveResponse = $(".save");
-const logout = $(".logout-icon");
-const skillDropdown = $("#skill-dropdown");
+// const skillDropdown = $("#skill-dropdown");
 
 // Populate dropdown list with skills
-skillDropdown.empty();
-skillDropdown.append($("<option>Choose one...</option>"));
-getSkills(function (skills) {
-    skills.forEach(skill => {
-        const newOption = $(`<option value="${skill.id}">${skill.subject}</option>`);
-        skillDropdown.append(newOption);
-    });
-});
+// skillDropdown.empty();
+// skillDropdown.append($("<option>choose one...</option>"));
+// getSkills(function (skills) {
+//     skills.forEach(skill => {
+//         const newOption = $(`<option value="${skill.id}">${skill.subject}</option>`);
+//         skillDropdown.append(newOption);
+//     });
+// });
 
 newPost.on("click", function (event) {
     // Get user info 
@@ -34,6 +33,7 @@ newPost.on("click", function (event) {
             window.location.replace("http://localhost:8080/feed");
           });
         });
+    });
 
 // saveResponse.on("click", function(event) {
 //     var addResponse = {
@@ -52,9 +52,3 @@ newPost.on("click", function (event) {
 //         window.location.replace("http://localhost:8080/feed");
 //       });
 // });
-
-// logout.on("click", function (event) {
-//     $.ajax("/api/logout", {
-//         type: "GET"
-//       });
-// })
