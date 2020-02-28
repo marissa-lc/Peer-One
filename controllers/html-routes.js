@@ -1,4 +1,5 @@
 const path = require("path");
+const db = require("../models");
 
 // Require some data models for use in dynamic rendering of HTML content using handlebars
 const post = require("../models/post");
@@ -34,12 +35,13 @@ module.exports = function (app) {
     res.render("signup");
   });
 
-  app.get("/login", function (req, res) {
+  app.get("/login", function (req, res ) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/skills");
-    }
+    } else {
     res.render("index");
+    }
   });
 
   // If a user who is not logged in tries to access this route they will be redirected to the signup page

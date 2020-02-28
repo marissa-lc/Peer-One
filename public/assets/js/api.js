@@ -144,16 +144,30 @@ login.on("click", function(){
 });
 
 // Signup a new user
+if( !signUp) {
 const signUp = $("#signup-btn");
-
 signUp.on("click", function() {
     signUp(userInfo, callback);
 });
+}
+
+// Post from Skills page
+const post = $(".login-post");
+
+post.on("click", function() {
+    addPost(post, callback);
+})
 
 // New post from feed
-const newPost = $(".new-post");
+// const newPost = $(".new-post");
 
-newPost.on("click", function() {
-    addPost(post, callback);
-});
+// newPost.on("click", function() {
+//     addPost(post, callback);
+// });
 
+// Logout
+const logout = $(".logout-icon");
+
+logout.on("click", function() {
+    logOut(callback);
+})

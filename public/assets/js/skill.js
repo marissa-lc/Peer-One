@@ -1,19 +1,6 @@
-const post = $(".login-post");
+const strengths = $(".strength");
 
-post.on("click", function(event) {
-    var addPost = {
-        userId: 1,
-        skillId: 1,
-        body: $(".login-body").val().trim()
-    }
-
-    console.log(addPost.body);
-
-    $.ajax("/api/posts", {
-        type: "POST",
-        data: addPost
-      }).then(function() {
-        // Reload the page to get the updated list
-        location.reload();
-      });
+strengths.on("click", function (event) {
+  event.preventDefault();
+  $(this).attr("style", "background-color: #F2F2F2;");
 });
