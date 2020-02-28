@@ -1,4 +1,4 @@
-const newPost = $(".new-post");
+// const newPost = $(".new-post");
 const saveResponse = $(".save");
 // const skillDropdown = $("#skill-dropdown");
 
@@ -12,28 +12,28 @@ const saveResponse = $(".save");
 //     });
 // });
 
-newPost.on("click", function (event) {
-    // Get user info 
-    getUserInfo(function (user) {
-        // Populate the JSON object
-        var addPost = {
-        userId: user.id,
-            skillId: $("#skill-dropdown:selected").text(),
-                body: $(".new-body").val().trim()
-        }
+// newPost.on("click", function (event) {
+//     // Get user info 
+//     getUserInfo(function (user) {
+//         // Populate the JSON object
+//         var addPost = {
+//         userId: user.id,
+//             skillId: $("#skill-dropdown:selected").text(),
+//                 body: $(".new-body").val().trim()
+//         }
 
 
-        console.log(addPost.body);
+//         console.log(addPost.body);
 
-        $.ajax("/api/posts", {
-            type: "POST",
-            data: addPost
-          }).then(function () {
-            // Reload the page to get the updated list
-            window.location.replace("http://localhost:8080/feed");
-          });
-        });
-    });
+//         $.ajax("/api/posts", {
+//             type: "POST",
+//             data: addPost
+//           }).then(function () {
+//             // Reload the page to get the updated list
+//             window.location.replace("http://localhost:8080/feed");
+//           });
+//         });
+//     });
 
 // saveResponse.on("click", function(event) {
 //     var addResponse = {

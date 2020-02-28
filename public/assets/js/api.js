@@ -159,11 +159,11 @@ post.on("click", function() {
 })
 
 // New post from feed
-// const newPost = $(".new-post");
+const newPost = $(".new-post");
 
-// newPost.on("click", function() {
-//     addPost(post, callback);
-// });
+newPost.on("click", function() {
+    addPost(post, callback);
+});
 
 // Logout
 const logout = $(".logout-icon");
